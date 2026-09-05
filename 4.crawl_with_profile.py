@@ -1,8 +1,8 @@
 """
-N8N Authentication Profile Example with Crawl4AI
+Patreon Authentication Profile Example with Crawl4AI
 
 This script demonstrates how to:
-1. Create a persistent browser profile for n8n authentication
+1. Create a persistent browser profile for Patreon authentication
 2. Save screenshots and content from authenticated pages
 3. Use profiles for maintaining login sessions
 
@@ -24,14 +24,14 @@ init()
 # ======= CONFIGURATION (MODIFY THESE VALUES) =======
 
 # URL to scrape
-TARGET_URL = "https://tubakhuym.app.n8n.cloud/workflow/nJA2ArB6nZzFvZIB"
+TARGET_URL = "https://www.patreon.com/c/kavsoft/posts"
 
 # Browser settings
 HEADLESS = False  # Set to False to see the browser window
 BROWSER_TYPE = "chromium"  # Use chromium (the browser type matters for the profile format)
 
 # Profile name (set to None to choose interactively or create new)
-PROFILE_NAME = "n8n-profile"
+PROFILE_NAME = "patreon-profile"
 
 # Content saving
 SAVE_CONTENT = True
@@ -174,7 +174,7 @@ async def crawl_with_profile(profile_path, url):
 
 
 async def main():
-    logger.info(f"{Fore.CYAN}N8N Authentication Profile Example{Style.RESET_ALL}", tag="DEMO")
+    logger.info(f"{Fore.CYAN}Patreon Authentication Profile Example{Style.RESET_ALL}", tag="DEMO")
     
     # Choose between interactive mode and automatic mode
     mode_input = input(f"{Fore.CYAN}Run in [i]nteractive mode or [a]utomatic mode? (i/a): {Style.RESET_ALL}").lower()
@@ -206,7 +206,7 @@ async def main():
         else:
             # Create a new profile if none exists
             logger.info("No profiles found. Creating a new one...", tag="DEMO")
-            logger.info(f"{Fore.YELLOW}IMPORTANT: Please log in to n8n in the browser window that will open.{Style.RESET_ALL}", tag="DEMO")
+            logger.info(f"{Fore.YELLOW}IMPORTANT: Please log in to Patreon in the browser window that will open.{Style.RESET_ALL}", tag="DEMO")
             logger.info(f"When finished, press 'q' in this terminal to save the profile.", tag="DEMO")
             
             profile_path = await profiler.create_profile()
